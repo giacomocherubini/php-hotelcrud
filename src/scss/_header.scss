@@ -1,16 +1,20 @@
 
-  nav {
-      a {
-        i {
-          color: white;
-        }
+nav {
+    a {
+      i {
+        color: white;
       }
-   }
+    }
+ }
 
-  .logo {
-    display: flex;
-    align-items: center;
-  }
+img {
+  margin-top: 10px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
 
 .nav_under_logo {
   padding: 50px 0;

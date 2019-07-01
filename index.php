@@ -17,63 +17,42 @@
   $conn->close();
  ?>
 
+<?php
 
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <link rel="stylesheet" href="public/css/app.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  </head>
-  <body>
-    <header>
-      <nav class="navbar navbar-dark bg-dark">
-        <a href="#"><i class="fa fa-twitter white"></i></a>
-        <a href="#"><i class="fa fa-facebook-f white"></i></a>
-        <a href="#"><i class="fa fa-twitter white"></i></a>
-      </nav>
-      <img class="rounded mx-auto d-block"  src="http://www.theplazany.com/wp-content/uploads/2016/02/PlazaLogo_Primary_RGB_WheatandWarmGray_2X.png" alt="">
-      <nav class="nav_under_logo">
-        <a href="#">History</a>
-        <a href="#">Gallery</a>
-        <a href="#">Reservations</a>
-        <a href="#">Offers</a>
-        <a href="#">Contact</a>
+  include 'layout/_head.php';
+  include 'layout/_header.php';
 
-      </nav>
-    </header>
+ ?>
 
     <div class="container">
+      <h1>ROOMS & SUITES</h1>
+
       <table class="table">
         <thead>
           <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Room Number</th>
-            <th scope="col">Floor</th>
-            <th scope="col">Beds</th>
-            <th scope="col">Created At</th>
-            <th scope="col">Update At</th>
+            <th class="text-center">ID</th>
+            <th class="text-center">Room Number</th>
+            <th class="text-center">Floor</th>
+            <th class="text-center">Beds</th>
+            <th class="text-right">Created At</th>
+            <th class="text-right">Updated At</th>
+            <th class="text-center">Actions</th>
           </tr>
         </thead>
         <tbody>
-
-
-
-
         <?php
         // se $result è definito e il numero delle righe di $result è maggiore di zero
         if($result && $result->num_rows > 0) {
           // prendi questi risultati, recupera la riga dei risultati successiva , inseriscila dentro row, finche row é definito
           while ($row = $result->fetch_assoc()) { ?>
             <tr>
-            <td><?php echo $row['id'] ?></td>
-            <td><?php echo $row['room_number'] ?></td>
-            <td><?php echo $row['floor'] ?></td>
-            <td><?php echo $row['beds'] ?></td>
-            <td><?php echo $row['created_at'] ?></td>
-            <td><?php echo $row['updated_at'] ?></td>
+            <td class="text-center"><?php echo $row['id'] ?></td>
+            <td class="text-center"><?php echo $row['room_number'] ?></td>
+            <td class="text-center"><?php echo $row['floor'] ?></td>
+            <td class="text-center"><?php echo $row['beds'] ?></td>
+            <td class="text-right"><?php echo $row['created_at'] ?></td>
+            <td class="text-right"><?php echo $row['updated_at'] ?></td>
+            <td class="text-center"><a href='show.php?id=<?php echo $row['id'] ?>' class="btn btn-info">Visualizza</a></td>
             </tr>
             <?php
           }
@@ -89,5 +68,4 @@
       </table>
     </div>
     <script src='public/js/app.js'></script>
-  </body>
-</html>
+    <?php include 'layout/_footer.php'; ?>

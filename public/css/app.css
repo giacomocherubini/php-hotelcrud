@@ -11104,6 +11104,10 @@ nav a i {
   color: white;
 }
 
+img {
+  margin-top: 10px;
+}
+
 .logo {
   display: -webkit-box;
   display: flex;
@@ -11120,5 +11124,9 @@ nav a i {
   font-size: 20px;
   color: #837970;
   padding: 50px;
+}
+
+h1 {
+  margin: 30px 0;
 }
 
